@@ -82,6 +82,8 @@ p,
 p {
   font-size: 1.125rem;
   font-weight: 300;
+  /* p line height per figma is 26px, divide that by element font size to get correct line height */
+  line-height: calc(26 / 18);
   margin: 0.75rem 0 1rem;
 }
 
