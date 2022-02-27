@@ -1,32 +1,64 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
 
-* {
+*,
+*:before,
+*:after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   font-family: 'Outfit', sans-serif;
   background-color: hsl(217, 54%, 11%);
 }
 
 main {
-  margin: 20vh auto 0;
-  max-width: 327px;
+  max-width: 20.4375rem;
 }
 
 .card {
   background: hsl(216, 50%, 16%);
-  padding: 24px;
-  border-radius: 15px;
+  padding: 1.5rem;
+  border-radius: 0.9375rem;
 }
 
 .card__image {
   display: block;
-  width: 100%;
-  border-radius: 8px;
+  position: relative;
   cursor: pointer;
+}
+
+.card__image > img {
+  max-width: 100%;
+  border-radius: 0.5rem;
+}
+
+.card__image:after {
+  content: '';
+  position: absolute;
+  border-radius: 0.5rem;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: hsla(178, 100%, 50%, 50%);
+  background-image: url('/assets/images/icon-view.svg');
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  cursor: pointer;
+}
+
+.card__image:hover:after {
+  opacity: 1;
 }
 
 .heading,
@@ -35,13 +67,9 @@ main {
 }
 
 .heading {
-  font-size: 22px;
-  padding-top: 24px;
+  font-size: 1.375rem;
+  margin-top: 1.5rem;
   cursor: pointer;
-}
-
-.heading:active {
-  color: hsl(178, 100%, 50%);
 }
 
 p,
@@ -51,25 +79,25 @@ p,
 }
 
 p {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 300;
-  padding: 12px 0 16px;
+  margin: 0.75rem 0 1rem;
 }
 
 .stats,
 .creator__info {
-  font-size: 15px;
+  font-size: 0.9375rem;
 }
 
 .stats {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 16px;
+  margin-bottom: 1rem;
 }
 
 .stats__image {
   vertical-align: bottom;
-  margin-right: 4px;
+  margin-right: 0.25rem;
 }
 
 .timer {
@@ -86,8 +114,8 @@ span {
   vertical-align: top;
 }
 
-.line {
-  padding-bottom: 16px;
+.break {
+  margin-bottom: 1rem;
   border-top: 1px solid hsl(215, 32%, 27%);
 }
 
@@ -97,17 +125,39 @@ span {
 }
 
 .avatar {
-  max-width: 33px;
+  max-width: 2.0625rem;
   border: 1px solid hsl(0, 0%, 100%);
   border-radius: 50%;
-  margin-right: 16px;
+  margin-right: 1rem;
 }
 
 .name {
   cursor: pointer;
-  margin-left: 5px;
+  margin-left: 0.3125rem;
 }
 
-.name:active {
+.heading:hover,
+.name:hover {
   color: hsl(178, 100%, 50%);
+  transition: 0.2s ease;
+}
+
+@media only screen and (min-width: 37.5rem) {
+  main {
+    max-width: 21.875rem;
+  }
+
+  p {
+    margin: 1rem 0 1.5rem;
+    line-height: 1.6;
+  }
+
+  .stats,
+  .creator__info {
+    font-size: 1rem;
+  }
+
+  .stats {
+    margin-bottom: 1.5rem;
+  }
 }
