@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap');
+
+:root {
+  /* Colors */
+  --dark: #191826;
+  --light: #fcfaf9;
+
+  /* Font sizes, don't need so many, will clean this up */
+  --fs-price: 65px; /* lh 52, bold */
+  --fs-price-span: 20px; /* lh 32, ls -.2px */
+  --fs-hdr-lg: 40px; /* lh 48, ls -.45 px, bold */
+  --fs-hdr: 32px; /* lh 40, bold */
+  --fs-para-lg: 18px; /* lh 28 */
+  --fs-para: 16px; /* lh 26 */
+  --fs-btn: 18px; /* lh 32, ls -.18px */
+  --fs-ftr: 16px; /* lh 26, regular and bold email */
+}
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+  min-height: 100vh;
+  /* max-width: 23.4375rem; */
+}
+
+/* main section with header logo, h1, and some text */
+
+main {
+  color: var(--dark);
+}
+
+.header__logo {
+  margin-top: 2.5rem;
+  margin-left: 1.5rem;
+}
+
+.main__text {
+  margin: 4rem 1.5rem 0;
+}
+
+.main__header {
+  font-size: var(--fs-hdr-lg);
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: -0.0625rem;
+}
+
+.main__para {
+  font-size: var(--fs-para);
+  line-height: 1.625;
+  margin-top: 1.25rem;
+}
+
+/* next section has dark backround with pattern and a device image */
+
+.dark__bg {
+  position: relative;
+  margin-top: 10.375rem;
+  padding: 0 3rem 0;
+  height: 37.5rem;
+  border-radius: 0.75rem;
+  background-color: var(--dark);
+  background-image: url('/assets/images/illustration-app.png'),
+    url('/assets/images/bg-pattern-2.svg');
+  background-origin: content-box;
+  background-size: auto 26.875rem, contain;
+  background-repeat: no-repeat, no-repeat;
+  background-position: top;
+}
+
+/* .dark__bg--overlay__image {
+  padding: inherit;
+  position: absolute;
+  background-image: url('/assets/images/illustration-app.png');
+} */
