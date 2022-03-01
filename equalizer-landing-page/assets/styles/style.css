@@ -76,3 +76,46 @@ main {
   height: 430px;
   width: 209px;
 }
+
+/* next section has a red-orange background with some text, and is overlapping previous section */
+
+.color__bg {
+  position: relative;
+  z-index: 999;
+  margin-top: -13.75rem;
+  padding: 3rem 2.25rem;
+  height: 34.125rem;
+  border-radius: 0.75rem;
+  color: var(--light);
+  background-color: #fa7453;
+}
+
+.color__header {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.25;
+}
+
+.color__para {
+  margin-top: 0.75rem;
+  font-size: 1.125rem;
+  line-height: calc(28 / 18);
+}
+
+.price__box {
+  display: flex;
+  align-items: center;
+  margin: 2.25rem 0 0 0.375rem;
+}
+
+.price {
+  margin-right: 1rem;
+  font-size: 4.0625rem;
+  font-weight: bold;
+}
+
+.price__span {
+  font-size: 1.25rem;
+  font-weight: normal;
+  letter-spacing: -0.2px;
+}
