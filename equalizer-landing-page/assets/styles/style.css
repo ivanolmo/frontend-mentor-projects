@@ -181,7 +181,7 @@ main {
 /* next section is the footer with contact and site info */
 
 footer {
-  padding: 0 1.5rem;
+  padding: 0 1.5rem 5rem;
 }
 
 .footer__logo {
@@ -201,10 +201,13 @@ footer {
   display: flex;
   align-items: center;
   gap: 1.25rem;
-  margin: 4rem 0 5rem;
+  margin-top: 4rem;
 }
 
-.footer__social img {
-  display: block;
-  height: 1.25rem;
+.social__link i {
+  color: var(--dark);
+}
+
+.social__link i:hover {
+  color: var(--orange);
 }
