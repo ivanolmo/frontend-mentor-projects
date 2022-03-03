@@ -4,6 +4,12 @@
   /* Colors */
   --dark: #191826;
   --light: #fcfaf9;
+  --cyan: #66e2dc;
+  --orange: #fa7453;
+  --yellow: #ffb964;
+
+  /* misc */
+  --radius: 0.75rem;
 }
 
 *,
@@ -21,11 +27,64 @@ body {
   /* max-width: 23.4375rem; */
 }
 
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: bold;
+  line-height: calc(32 / 18);
+  letter-spacing: -0.0125rem;
+  padding: 0.9375rem 0 0.875rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.btn img {
+  height: 1.25rem;
+}
+
+.btn--dark {
+  background-color: var(--dark);
+}
+
+.btn--dark:hover {
+  background-color: var(--cyan);
+}
+
+/* might want to use this to increase contrast ratio for this btn:hover */
+/* .btn--dark:hover img,
+.btn--dark:hover span {
+  text-shadow: 0 0 5px #000;
+} */
+
+.btn--light {
+  color: var(--dark);
+  background-color: var(--light);
+}
+
+.btn--light:hover {
+  background-color: var(--yellow);
+}
+
+.btn--mobile {
+  width: 100%;
+}
+
+.btn__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 2rem 0.375rem 0;
+}
+
 /* main section with header logo, h1, and some text */
 
 main {
   color: var(--dark);
   background-image: url('/assets/images/bg-main-mobile.png');
+  /* image placement needs work */
   /* background-position: top 50% right 100%; */
   background-repeat: no-repeat;
 }
@@ -59,13 +118,14 @@ main {
   margin-top: 10.375rem;
   padding: 0 3rem 0;
   height: 37.5rem;
-  border-radius: 0.75rem;
+  border-radius: var(--radius);
   background-color: var(--dark);
   background-image: url('/assets/images/bg-pattern-2.svg');
   background-origin: content-box;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: top;
+  z-index: -1;
 }
 
 .overlay__image {
@@ -81,13 +141,12 @@ main {
 
 .color__bg {
   position: relative;
-  z-index: 999;
   margin-top: -13.75rem;
   padding: 3rem 2.25rem;
   height: 34.125rem;
-  border-radius: 0.75rem;
+  border-radius: var(--radius);
   color: var(--light);
-  background-color: #fa7453;
+  background-color: var(--orange);
 }
 
 .color__header {
@@ -97,7 +156,7 @@ main {
 }
 
 .color__para {
-  margin-top: 0.75rem;
+  margin-top: var(--radius);
   font-size: 1.125rem;
   line-height: calc(28 / 18);
 }
@@ -112,6 +171,7 @@ main {
   margin-right: 1rem;
   font-size: 4.0625rem;
   font-weight: bold;
+  line-height: calc(52 / 65);
 }
 
 .price__span {
