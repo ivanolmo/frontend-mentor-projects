@@ -21,9 +21,12 @@
 }
 
 body {
+  background-color: var(--light);
+  background-image: url('/assets/images/bg-main-mobile.png');
+  background-position: top -12rem right -12rem;
+  background-repeat: no-repeat;
   font-family: 'IBM Plex Sans', sans-serif;
   min-height: 100vh;
-  /* max-width: 23.4375rem; */
 }
 
 .btn {
@@ -82,10 +85,6 @@ body {
 
 main {
   color: var(--dark);
-  background-image: url('/assets/images/bg-main-mobile.png');
-  /* image placement needs work */
-  /* background-position: top 50% right 100%; */
-  background-repeat: no-repeat;
 }
 
 .header__logo {
