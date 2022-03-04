@@ -93,7 +93,6 @@ main {
 }
 
 .main__text {
-  /* margin-inline: 1.5rem; */
   padding-inline: clamp(1.5rem, 0.0849rem + 5.0314vw, 2.5rem);
   margin-top: clamp(4rem, 1.2583rem + 9.7484vw, 5.9375rem);
   max-width: 32rem;
@@ -103,7 +102,7 @@ main {
   font-size: clamp(2.5rem, 0.3774rem + 7.5472vw, 4rem);
   font-weight: bold;
   line-height: clamp(3rem, 1.5849rem + 5.0314vw, 4rem);
-  letter-spacing: -0.0625rem; /* TODO figure out clamp for letter spacing */
+  letter-spacing: -0.0625rem; /* TODO calculate clamp for letter spacing */
 }
 
 .main__para {
@@ -115,27 +114,31 @@ main {
 /* next section has dark backround with pattern and a device image */
 
 .dark__bg {
-  position: relative;
-  margin-top: 10.375rem;
-  padding: 0 3rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 43.5rem;
+  margin-top: clamp(10.375rem, 2.9458rem + 26.4151vw, 15.625rem);
+  margin-inline: auto;
   height: 37.5rem;
   border-radius: var(--radius);
   background-color: var(--dark);
   background-image: url('/assets/images/bg-pattern-2.svg');
-  background-origin: content-box;
-  background-size: contain;
+  background-size: 17.5rem;
   background-repeat: no-repeat;
   background-position: top;
   z-index: -1;
 }
 
 .overlay__image {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: -6.125rem auto;
-  height: 430px;
-  width: 209px;
+  margin-top: clamp(-6.125rem, -2.5873rem - 12.5786vw, -8.625rem);
+  width: clamp(13.0625rem, 7.6675rem + 19.1824vw, 16.875rem);
+}
+
+@media (min-width: 33.75rem) {
+  .overlay__image {
+    margin-inline: clamp();
+  }
 }
 
 /* next section has a red-orange background with some text, and is overlapping previous section */
