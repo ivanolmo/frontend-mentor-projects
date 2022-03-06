@@ -111,23 +111,23 @@ main {
   margin-top: clamp(1.25rem, 0.5425rem + 2.5157vw, 1.75rem);
 }
 
-/* next section has dark backround with pattern and a device image */
+/* next section has dark backround with pattern and a device image,
+ overlapped by orange section with price/buttons */
 
 .dark__bg {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 3rem;
   max-width: 43.5rem;
   margin-top: clamp(10.375rem, 2.9458rem + 26.4151vw, 15.625rem);
   margin-inline: auto;
-  height: 37.5rem;
   border-radius: var(--radius);
   background-color: var(--dark);
   background-image: url('/assets/images/bg-pattern-2.svg');
   background-size: 17.5rem;
   background-repeat: no-repeat;
-  background-position: top;
-  z-index: -1;
+  background-position: top; /* TODO fix positioning outside of mobile */
 }
 
 .overlay__image {
@@ -135,18 +135,9 @@ main {
   width: clamp(13.0625rem, 7.6675rem + 19.1824vw, 16.875rem);
 }
 
-@media (min-width: 33.75rem) {
-  .overlay__image {
-    margin-inline: clamp();
-  }
-}
-
-/* next section has a red-orange background with some text, and is overlapping previous section */
-
 .color__bg {
-  position: relative;
-  margin-top: -13.75rem;
   padding: 3rem 2.25rem;
+  max-width: 24.9375rem;
   height: 34.125rem;
   border-radius: var(--radius);
   color: var(--light);
