@@ -93,7 +93,7 @@ main {
 }
 
 .main__text {
-  padding-inline: clamp(1.5rem, 0.0849rem + 5.0314vw, 2.5rem);
+  margin-inline: clamp(1.5rem, 0.0849rem + 5.0314vw, 2.5rem);
   margin-top: clamp(4rem, 1.2583rem + 9.7484vw, 5.9375rem);
   max-width: 32rem;
 }
@@ -211,6 +211,12 @@ footer {
   color: var(--orange);
 }
 
+/*********************
+
+  Media queries
+
+*********************/
+
 @media (min-width: 28.125rem) {
   .dark__bg {
     background-position: top -1.9375rem left 55%;
@@ -261,12 +267,45 @@ footer {
   }
 }
 
-@media (min-width: 90rem) {
+@media (min-width: 62.5rem) {
   body {
     background-image: url('/assets/images/bg-pattern-1.svg'),
       url('/assets/images/bg-main-desktop.png');
-    background-position: top -2.5rem right, top -12rem right -8rem;
-    background-size: 19.5rem, auto;
+    background-position: top -2.5rem right, top -16rem right -8rem;
+    background-size: clamp(16.625rem, 10.0909rem + 10.4545vw, 19.5rem), auto;
     background-repeat: no-repeat;
+  }
+
+  .header__logo,
+  .main__text {
+    margin-left: clamp(3.875rem, -10.7557rem + 23.4091vw, 10.3125rem);
+  }
+
+  .main__text {
+    margin-top: clamp(5.9375rem, 1.392rem + 7.2727vw, 7.9375rem);
+    max-width: clamp(32rem, -23.1136rem + 88.1818vw, 54.25rem);
+  }
+
+  .main__header {
+    font-size: clamp(4rem, 0.5909rem + 5.4545vw, 5.5rem);
+    line-height: 1;
+  }
+
+  .main__para {
+    font-size: clamp(1.125rem, 0.8409rem + 0.4545vw, 1.25rem);
+    line-height: 2.125rem;
+    margin-top: clamp(1.75rem, 0.0455rem + 2.7273vw, 2.5rem);
+  }
+
+  .dark__bg {
+    margin-top: clamp(15.625rem, 5.5398rem + 16.1364vw, 20.0625rem);
+    max-width: clamp(43.5rem, -15.3068rem + 94.0909vw, 69.375rem);
+    background-size: clamp(17.5rem, 12.9545rem + 7.2727vw, 19.5rem);
+    background-position: top -2.5rem left 42%;
+  }
+
+  .overlay__image {
+    margin-inline: 6.375rem auto;
+    width: clamp(16.875rem, 10.9091rem + 9.5455vw, 19.5rem);
   }
 }
