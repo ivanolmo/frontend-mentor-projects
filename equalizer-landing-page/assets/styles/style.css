@@ -217,6 +217,8 @@ footer {
 
 *********************/
 
+/* Beginning of resize between mobile and tablet */
+
 @media (min-width: 28.125rem) {
   .dark__bg {
     background-position: top -1.9375rem left 55%;
@@ -257,6 +259,8 @@ footer {
   }
 }
 
+/* Rest of tablet query */
+
 @media (min-width: 48rem) {
   body {
     background-image: url('/assets/images/bg-pattern-1.svg'),
@@ -266,6 +270,8 @@ footer {
     background-repeat: no-repeat;
   }
 }
+
+/* Desktop */
 
 @media (min-width: 62.5rem) {
   body {
@@ -305,7 +311,16 @@ footer {
   }
 
   .overlay__image {
+    margin-top: clamp(-13.3125rem, 10.2102rem + -26.1364vw, -6.125rem);
     margin-inline: 6.375rem auto;
     width: clamp(16.875rem, 10.9091rem + 9.5455vw, 19.5rem);
+  }
+
+  .color__bg {
+    margin-top: clamp(-21.1875rem, -6.6648rem + -16.1364vw, -16.75rem);
+    margin-bottom: -7.1875rem;
+    margin-inline: auto clamp(3.625rem, -1.6307rem + 8.4091vw, 5.9375rem);
+    padding: 3.625rem 3.6875rem 3rem 3.375rem;
+    max-width: clamp(24.9375rem, 18.2614rem + 10.6818vw, 27.875rem);
   }
 }
