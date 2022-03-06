@@ -126,11 +126,11 @@ main {
   background-image: url('/assets/images/bg-pattern-2.svg');
   background-size: 17.5rem;
   background-repeat: no-repeat;
-  background-position: top; /* TODO fix positioning outside of mobile */
+  background-position: top;
 }
 
 .overlay__image {
-  margin-top: clamp(-6.125rem, -2.5873rem - 12.5786vw, -8.625rem);
+  margin-top: clamp(-8.625rem, -2.5873rem - 12.5786vw, -6.125rem);
   width: clamp(13.0625rem, 7.6675rem + 19.1824vw, 16.875rem);
 }
 
@@ -212,6 +212,10 @@ footer {
 }
 
 @media (min-width: 28.125rem) {
+  .dark__bg {
+    background-position: top -1.9375rem left 55%;
+  }
+
   .overlay__image {
     margin-inline: 4rem auto;
   }
@@ -244,5 +248,15 @@ footer {
 
   .footer__social {
     margin: 0;
+  }
+}
+
+@media (min-width: 48rem) {
+  body {
+    background-image: url('/assets/images/bg-pattern-1.svg'),
+      url('/assets/images/bg-main-tablet.png');
+    background-position: top -2rem right -2.25rem, top -12rem right -8rem;
+    background-size: 16.625rem, auto;
+    background-repeat: no-repeat;
   }
 }
