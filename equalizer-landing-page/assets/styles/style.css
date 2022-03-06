@@ -260,3 +260,13 @@ footer {
     background-repeat: no-repeat;
   }
 }
+
+@media (min-width: 90rem) {
+  body {
+    background-image: url('/assets/images/bg-pattern-1.svg'),
+      url('/assets/images/bg-main-desktop.png');
+    background-position: top -2.5rem right, top -12rem right -8rem;
+    background-size: 19.5rem, auto;
+    background-repeat: no-repeat;
+  }
+}
