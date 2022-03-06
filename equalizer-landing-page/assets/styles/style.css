@@ -180,6 +180,10 @@ main {
   margin: 4rem 1.5rem 5rem;
 }
 
+.footer__logo {
+  display: inline-block;
+}
+
 .footer__container {
   margin-top: 2rem;
 }
