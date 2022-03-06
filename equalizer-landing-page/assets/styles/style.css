@@ -95,7 +95,7 @@ main {
   font-size: clamp(2.5rem, 0.3774rem + 7.5472vw, 4rem);
   font-weight: bold;
   line-height: clamp(3rem, 1.5849rem + 5.0314vw, 4rem);
-  letter-spacing: -0.0625rem; /* TODO calculate clamp for letter spacing */
+  letter-spacing: -0.03125rem;
 }
 
 .main__para {
@@ -216,6 +216,10 @@ main {
 /* Beginning of resize between mobile and tablet */
 
 @media (min-width: 28.125rem) {
+  .main__header {
+    letter-spacing: -0.046875rem;
+  }
+
   .dark__bg {
     background-position: top -1.9375rem left 55%;
   }
@@ -287,6 +291,7 @@ main {
   .main__header {
     font-size: clamp(4rem, 0.5909rem + 5.4545vw, 5.5rem);
     line-height: 1;
+    letter-spacing: -0.0625rem;
   }
 
   .main__para {
