@@ -104,6 +104,7 @@ body {
 .btn {
   font-size: 0.9375rem;
   font-weight: 900;
+  cursor: pointer;
 }
 
 .btn--color {
@@ -119,4 +120,23 @@ body {
 .btn--transp {
   color: hsl(224, 23%, 55%);
   margin-bottom: 0.5rem;
+}
+
+.plan__link a:hover,
+.btn--color:hover,
+.btn--transp:hover {
+  transition: 0.2s;
+}
+
+.btn--color:hover {
+  background-color: hsl(245, 83%, 69%);
+}
+
+.plan__link a:hover {
+  color: hsl(245, 83%, 69%);
+  text-decoration: none;
+}
+
+.btn--transp:hover {
+  color: hsl(223, 47%, 23%);
 }
