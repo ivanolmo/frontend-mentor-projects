@@ -30,6 +30,7 @@ body {
   background-color: #fff;
   max-width: 20.4375rem;
   border-radius: var(--radius);
+  box-shadow: 0 0.75rem 1rem 0 rgba(121, 110, 242, 0.3);
 }
 
 .card__image > img {
@@ -114,7 +115,7 @@ body {
   padding: 0.9375rem 0;
   text-align: center;
   border-radius: var(--radius-sm);
-  box-shadow: 0 1.875rem 1rem 0 rgba(214, 225, 255, 0.9);
+  box-shadow: 0 1rem 1rem 0 rgba(121, 110, 242, 0.3);
 }
 
 .btn--transp {
