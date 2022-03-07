@@ -27,7 +27,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [View my solution on Frontend Mentor](https://your-solution-url.com)
+- Solution URL: [View my solution on Frontend Mentor](https://www.frontendmentor.io/solutions/simple-card-with-html-and-css-_3Zj-Yg5z)
 - Live Site URL: [View live site on Netlify](https://pensive-bartik-35af91.netlify.app/)
 
 ## My process
