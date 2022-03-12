@@ -8,6 +8,11 @@
   box-sizing: border-box;
 }
 
+img {
+  display: block;
+  width: 100%;
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -21,13 +26,20 @@ body {
   background-color: hsl(244, 38%, 16%);
   max-width: 20.4375rem;
   border-radius: 0.5rem;
+  overflow: hidden;
 }
 
 .header__img {
-  background-image: url('/images/image-header-mobile.jpg');
-  background-size: cover;
-  width: 100%;
-  height: 15rem;
+  background-color: hsl(277, 64%, 61%);
+}
+
+.header__img img {
+  opacity: 0.8;
+  mix-blend-mode: multiply;
+}
+
+.img--desktop {
+  display: none;
 }
 
 .content__container {
