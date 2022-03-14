@@ -8,6 +8,10 @@
   padding: 0;
 }
 
+img {
+  display: block;
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -15,4 +19,49 @@ body {
   font-family: 'Manrope', sans-serif;
   background-color: hsl(218, 23%, 16%);
   min-height: 100vh;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+
+  background-color: hsl(217, 19%, 24%);
+
+  padding: 2.5rem 1.5rem 4rem;
+
+  max-width: 21.4375rem;
+  border-radius: 0.625rem;
+}
+
+.heading {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.21875rem;
+  text-transform: uppercase;
+  color: hsl(150, 100%, 66%);
+}
+
+.advice__text {
+  color: hsl(193, 38%, 86%);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.015625rem;
+  text-align: center;
+}
+
+.divider--desktop {
+  display: none;
+}
+
+.advice__btn {
+  position: absolute;
+  bottom: -2rem;
+  background-color: hsl(150, 100%, 66%);
+  padding: 1.25rem;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
 }
