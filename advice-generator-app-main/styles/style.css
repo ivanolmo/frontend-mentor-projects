@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
 
 *,
 *::before,
@@ -38,7 +38,6 @@ body {
 
 .heading {
   font-size: 0.6875rem;
-  font-weight: 700;
   letter-spacing: 0.21875rem;
   text-transform: uppercase;
   color: hsl(150, 100%, 66%);
@@ -47,7 +46,6 @@ body {
 .advice__text {
   color: hsl(193, 38%, 86%);
   font-size: 1.5rem;
-  font-weight: 700;
   letter-spacing: -0.015625rem;
   text-align: center;
 }
@@ -64,4 +62,28 @@ body {
   border: none;
   border-radius: 50%;
   cursor: pointer;
+}
+
+@media (min-width: 50rem) {
+  .card {
+    max-width: 33.75rem;
+    padding: 3rem 3rem 4.5rem;
+    border-radius: 0.9375rem;
+  }
+
+  .heading {
+    font-size: 0.75rem;
+  }
+  .advice__text {
+    font-size: 1.75rem;
+  }
+
+  .divider--mobile {
+    display: none;
+  }
+
+  .divider--desktop {
+    display: block;
+    margin-top: 1rem;
+  }
 }
