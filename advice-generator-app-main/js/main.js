@@ -12,7 +12,7 @@ async function fetchAdvice() {
 
 async function updateUI() {
   const { id, advice } = await fetchAdvice();
-  heading.innerHTML = `Advice #${id}`;
+  heading.innerHTML = `Advice # ${id}`;
   textBox.innerHTML = `&ldquo;${advice}&rdquo;`;
 }
 
