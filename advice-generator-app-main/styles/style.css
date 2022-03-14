@@ -64,6 +64,12 @@ body {
   cursor: pointer;
 }
 
+.advice__btn:hover,
+.advice__btn:focus {
+  box-shadow: 0 0 1.5rem 0.0125rem hsl(150, 100%, 66%);
+  transition: 0.2s;
+}
+
 @media (min-width: 50rem) {
   .card {
     max-width: 33.75rem;
