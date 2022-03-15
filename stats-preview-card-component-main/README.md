@@ -22,14 +22,14 @@ Users should be able to:
 
 - View the optimal layout depending on their device's screen size
 
-### Screenshot
+### Preview
 
-![](./screenshot.jpg)
+https://user-images.githubusercontent.com/48425752/158291211-6740d408-d486-4165-89d9-6484e92d29ca.mp4
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [View my solution on Frontend Mentor](https://www.frontendmentor.io/solutions/stats-component-using-htmlcss-Nm-Cqz755)
+- Live Site URL: [View this app on Netlify](https://dreamy-aryabhata-447b58.netlify.app/)
 
 ## My process
 
