@@ -80,7 +80,7 @@ body {
   text-align: center;
 }
 
-.stats h3 {
+.stats h2 {
   color: hsl(0, 0%, 100%);
   font-size: 1.5rem;
   font-weight: 700;
