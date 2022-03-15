@@ -131,7 +131,7 @@ body {
 
   .stats__container {
     flex-direction: row;
-    justify-content: space-between;
+    gap: 3.75rem;
     margin-top: 3rem;
     width: 100%;
   }
