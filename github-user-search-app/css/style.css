@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --lm-blue: #0079ff;
+
+  /* light mode colors */
+  --lm-l-gray: #697c9a;
+  --lm-bl-gray: #4b6a9b;
+  --lm-dk-gray: #2b3442;
+  --lm-o-white: #f6f8ff;
+  --lm-white: #fefefe;
+
+  /* dark mode colors */
+  --dm-white: #ffffff;
+  --dm-dark: #141d2f;
+  --dm-dk-blue: #1e2a47;
+
+  --br: 0.9375rem;
+  --br-lg: 1.125rem;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Space Mono', monospace;
+  background-color: var(--dm-dark);
+}
