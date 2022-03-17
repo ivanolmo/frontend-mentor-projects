@@ -1,19 +1,23 @@
 import { useState } from 'react';
+import { getUser } from '../../api/getUser';
 
 function UserSearch() {
   const [text, setText] = useState('');
+  const [user, setUser] = useState({});
 
   const handleChange = (e) => {
     setText(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (text === '') {
+      // TODO improve this alert, needs to change input text to show error
       alert('Empty search string');
     } else {
-      // TODO search users
+      const userInfo = await getUser(text);
       setText('');
+      setUser(userInfo);
     }
   };
 
