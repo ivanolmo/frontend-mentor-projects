@@ -7,7 +7,7 @@ const github = axios.create({
 });
 
 export const getUser = async (text) => {
-  const response = await github.get(`${text}`);
+  const response = await github.get(`/${text}`);
 
-  return response.data;
+  return response.data.items;
 };
