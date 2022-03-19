@@ -1,9 +1,10 @@
-import { useState } from 'react';
-import { getUser } from '../../api/getUser';
+import { useState, useContext } from 'react';
+import GithubContext from '../../context/GithubContext';
+import { getUser } from '../../context/GithubActions';
 
 function UserSearch() {
+  const { dispatch } = useContext(GithubContext);
   const [text, setText] = useState('');
-  const [user, setUser] = useState({});
 
   const handleChange = (e) => {
     setText(e.target.value);
@@ -15,9 +16,10 @@ function UserSearch() {
       // TODO improve this alert, needs to change input text to show error
       alert('Empty search string');
     } else {
-      const userInfo = await getUser(text);
+      dispatch({ type: 'SET_LOADING' });
+      const user = await getUser(text);
+      dispatch({ type: 'GET_USER', payload: user });
       setText('');
-      setUser(userInfo);
     }
   };
 
