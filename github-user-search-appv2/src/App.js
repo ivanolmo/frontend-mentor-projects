@@ -1,5 +1,12 @@
+import { GithubProvider } from './context/GithubContext';
+import Card from './components/layout/Card';
+
 function App() {
-  return <div className='App'>Working</div>;
+  return (
+    <GithubProvider>
+      <Card />
+    </GithubProvider>
+  );
 }
 
 export default App;
