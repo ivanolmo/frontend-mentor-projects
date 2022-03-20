@@ -11,6 +11,11 @@ const githubReducer = (state, action) => {
         ...state,
         isLoading: true,
       };
+    case 'TOGGLE_THEME':
+      return {
+        ...state,
+        theme: action.payload === 'light' ? 'dark' : 'light',
+      };
     default:
       return state;
   }
