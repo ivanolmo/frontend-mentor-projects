@@ -1,6 +1,7 @@
 import { useState, useContext } from 'react';
 import GithubContext from '../../context/GithubContext';
 import { getUser } from '../../context/GithubActions';
+import { ReactComponent as SearchIcon } from '../assets/icon-search.svg';
 
 function UserSearch() {
   const { dispatch } = useContext(GithubContext);
@@ -24,17 +25,20 @@ function UserSearch() {
   };
 
   return (
-    <section>
-      <form onSubmit={handleSubmit}>
-        <input
-          type='text'
-          placeholder='Search GitHub username...'
-          value={text}
-          onChange={handleChange}
-        />
-        <button>Search</button>
-      </form>
-    </section>
+    <form className='user__search' onSubmit={handleSubmit}>
+      <label htmlFor='input'>
+        {/* TODO fix icon size on small screens */}
+        <SearchIcon />
+      </label>
+      <input
+        type='text'
+        id='input'
+        placeholder='Search GitHub username&#8230;'
+        value={text}
+        onChange={handleChange}
+      />
+      <button className='search__btn'>Search</button>
+    </form>
   );
 }
 
