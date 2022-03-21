@@ -48,7 +48,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  transition: 0.3s;
+  transition: 0.5s;
 }
 
 a {
@@ -157,8 +157,7 @@ header {
 
 /* card with main user content */
 .card {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   background-color: var(--background);
   margin-top: 1rem;
   padding: 2rem 1.5rem 3rem;
@@ -175,19 +174,25 @@ header {
 
 @media (min-width: 62rem) {
   .card {
+    grid-template-columns: 7.3125rem auto;
+    column-gap: 2.3125rem;
     padding: 3rem;
   }
 }
 
-/* user image, name, GH page, and join date */
+/* user image, name, GitHub page, and join date */
 .user__heading {
-  display: flex;
+  display: grid;
+  grid-template-columns: 4.375rem auto;
   align-items: center;
   gap: 1.25rem;
 }
 
 .user__image {
   max-width: 4.375rem;
+}
+
+.user__subheading {
 }
 
 .user__name {
@@ -222,12 +227,13 @@ header {
 
 /* self explanatory... user bio */
 .user__bio {
-  margin-top: 2rem;
+  margin-top: 2.0625rem;
   line-height: calc(25 / 13);
 }
 
 @media (min-width: 48rem) {
   .user__heading {
+    grid-template-columns: 7.3125rem auto;
     gap: 2.5rem;
   }
 
@@ -254,7 +260,35 @@ header {
   }
 
   .user__bio {
+    margin-top: 1.5rem;
     line-height: calc(25 / 15);
+  }
+}
+
+@media (min-width: 62rem) {
+  .user__heading {
+    grid-column: 1 / -1;
+    gap: 2.3125rem;
+  }
+
+  .user__subheading {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 8.625rem;
+  }
+
+  .user__name,
+  .user__page {
+    grid-column: 1;
+  }
+
+  .user__joindate {
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  .user__bio {
+    grid-column: 2 / -1;
   }
 }
 
@@ -264,7 +298,7 @@ header {
   justify-content: space-evenly;
   align-items: center;
   background-color: var(--body);
-  margin-top: 1.5rem;
+  margin-top: 1.4375rem;
   padding: 1.125rem 0;
   border-radius: 0.625rem;
 }
@@ -309,16 +343,16 @@ header {
 
 @media (min-width: 62rem) {
   .user__stats {
+    grid-column: 2 / -1;
     padding-right: 5.1875rem;
   }
 }
 
 /* user location, website, twitter page, and company name */
 .user__data {
-  font-size: 0.8125rem;
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 1rem;
+  font-size: 0.8125rem;
   margin-top: 1.5rem;
 }
 
@@ -332,9 +366,10 @@ header {
   color: var(--text-secondary);
 }
 
-/* TODO needs to switch layout for tablet/desktop */
 @media (min-width: 48rem) {
   .user__data {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.125rem;
     font-size: 0.9375rem;
     margin-top: 1.875rem;
   }
@@ -342,6 +377,7 @@ header {
 
 @media (min-width: 62rem) {
   .user__data {
+    grid-column: 2 / -1;
     margin-top: 2.3125rem;
   }
 }
