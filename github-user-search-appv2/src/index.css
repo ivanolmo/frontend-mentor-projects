@@ -107,11 +107,11 @@ header {
 
 /* user search bar */
 .user__search {
+  display: flex;
+  align-items: center;
   background-color: var(--background);
   margin-top: 2rem;
   padding: 6.5px 7px 7.5px 16px;
-  display: flex;
-  align-items: center;
   border-radius: 0.9375rem;
   box-shadow: var(--shadow);
 }
@@ -126,6 +126,10 @@ header {
 
 ::placeholder {
   opacity: 1;
+}
+
+.search__icon {
+  margin-right: 0.5625rem;
 }
 
 .search__btn {
@@ -149,9 +153,19 @@ header {
     line-height: calc(25 / 18);
   }
 
+  .search__icon {
+    margin-right: 1.5rem;
+  }
+
   .search__btn {
     font-size: 1rem;
     padding: 0.8125rem 1.5rem;
+  }
+}
+
+@media (min-width: 62rem) {
+  .search__icon {
+    margin-right: 1.625rem;
   }
 }
 
@@ -190,9 +204,6 @@ header {
 
 .user__image {
   max-width: 4.375rem;
-}
-
-.user__subheading {
 }
 
 .user__name {
@@ -274,7 +285,6 @@ header {
   .user__subheading {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 8.625rem;
   }
 
   .user__name,
@@ -285,6 +295,7 @@ header {
   .user__joindate {
     grid-row: 1;
     grid-column: 2;
+    justify-self: right;
   }
 
   .user__bio {
