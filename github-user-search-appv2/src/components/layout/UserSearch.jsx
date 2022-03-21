@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { getUser } from '../../context/GithubActions';
-import { ReactComponent as SearchIcon } from '../assets/icon-search.svg';
+import searchIcon from '../assets/icon-search.svg';
 
 function UserSearch({ dispatch }) {
   const [text, setText] = useState('');
@@ -27,7 +27,7 @@ function UserSearch({ dispatch }) {
     <form className='user__search' onSubmit={handleSubmit}>
       <label htmlFor='input'>
         {/* TODO fix icon size on small screens */}
-        <SearchIcon />
+        <img src={searchIcon} alt='search' className='search__icon' />
       </label>
       <input
         type='text'
