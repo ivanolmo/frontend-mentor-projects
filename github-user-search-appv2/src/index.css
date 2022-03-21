@@ -7,8 +7,10 @@
   --text-primary: #2b3442;
   --text-secondary: #4b6a9b;
   --text-inactive: #697c9a;
+  --util: #222731;
+  --theme-active: #222731;
   --blue: #0079ff;
-  --blue-inactive: #60abff;
+  --blue-active: #60abff;
   --shadow: 0 0.75rem 1rem 0 rgba(121, 110, 242, 0.2);
 }
 
@@ -17,21 +19,24 @@
   --background: #1e2a47;
   --text-primary: #ffffff;
   --text-secondary: #ffffff;
-  --text-inactive: #697c9a;
-  --blue: #0079ff;
-  --blue-inactive: #60abff;
+  --util: #ffffff;
+  --theme-active: #90a4d4;
   --shadow: none;
 }
 
 /* declare font colors to make applying dark theme easier */
 body,
-.logo,
 .user__name,
 .item__count {
   color: var(--text-primary);
 }
 
-.user__search input,
+.logo,
+.input,
+.user__search input {
+  color: var(--util);
+}
+
 .user__joindate,
 .user__bio,
 .item__heading,
@@ -105,6 +110,12 @@ header {
   cursor: pointer;
 }
 
+/* TODO fix svg color */
+.theme__switcher:hover,
+.theme__switcher:focus {
+  color: var(--theme-active);
+}
+
 /* user search bar */
 .user__search {
   display: flex;
@@ -141,6 +152,12 @@ header {
   border: none;
   border-radius: 0.625rem;
   cursor: pointer;
+}
+
+.search__btn:hover,
+.search__btn:focus {
+  background-color: var(--blue-active);
+  transition: 0.5s;
 }
 
 @media (min-width: 48rem) {
