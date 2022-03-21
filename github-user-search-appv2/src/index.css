@@ -64,7 +64,6 @@ a {
 img {
   display: block;
   width: 100%;
-  border-radius: 50%;
 }
 
 /* width of app */
@@ -122,15 +121,15 @@ header {
   align-items: center;
   background-color: var(--background);
   margin-top: 2rem;
-  padding: 6.5px 7px 7.5px 16px;
+  padding: 0.46875rem 0.4375rem 0.46875rem 1rem;
   border-radius: 0.9375rem;
   box-shadow: var(--shadow);
 }
 
 .user__search input {
+  flex-grow: 1;
   font-size: 0.8125rem;
   background: transparent;
-  width: 100%;
   border: none;
   line-height: calc(25 / 13);
 }
@@ -140,7 +139,9 @@ header {
 }
 
 .search__icon {
-  margin-right: 0.5625rem;
+  margin-right: 0.5rem;
+  width: 20px;
+  height: 20px;
 }
 
 .search__btn {
@@ -162,7 +163,7 @@ header {
 
 @media (min-width: 48rem) {
   .user__search {
-    padding: 9.5px 10px 9.5px 32px;
+    padding: 0.59375rem 0.625rem 0.59375rem 2rem;
   }
 
   .user__search input {
@@ -177,12 +178,6 @@ header {
   .search__btn {
     font-size: 1rem;
     padding: 0.8125rem 1.5rem;
-  }
-}
-
-@media (min-width: 62rem) {
-  .search__icon {
-    margin-right: 1.625rem;
   }
 }
 
@@ -221,6 +216,7 @@ header {
 
 .user__image {
   max-width: 4.375rem;
+  border-radius: 50%;
 }
 
 .user__name {
