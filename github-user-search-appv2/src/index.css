@@ -73,6 +73,12 @@ main {
   }
 }
 
+@media (min-width: 62rem) {
+  main {
+    width: 45.625rem;
+  }
+}
+
 /* header with logo and theme toggle */
 header {
   display: flex;
@@ -164,6 +170,12 @@ header {
   .card {
     margin-top: 1.5rem;
     padding: 2.5rem;
+  }
+}
+
+@media (min-width: 62rem) {
+  .card {
+    padding: 3rem;
   }
 }
 
@@ -278,11 +290,12 @@ header {
   .user__stats {
     justify-content: space-between;
     margin-top: 2rem;
-    padding: 1.125rem 6rem 1.0625rem 2rem;
+    padding: 0.9375rem 6rem 1.0625rem 2rem;
   }
 
   .stats__item {
     align-items: flex-start;
+    gap: 0;
   }
 
   .item__heading {
@@ -291,6 +304,12 @@ header {
 
   .item__count {
     font-size: 1.375rem;
+  }
+}
+
+@media (min-width: 62rem) {
+  .user__stats {
+    padding-right: 5.1875rem;
   }
 }
 
@@ -318,5 +337,11 @@ header {
   .user__data {
     font-size: 0.9375rem;
     margin-top: 1.875rem;
+  }
+}
+
+@media (min-width: 62rem) {
+  .user__data {
+    margin-top: 2.3125rem;
   }
 }
