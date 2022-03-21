@@ -1,10 +1,9 @@
-import { useState, useContext } from 'react';
-import GithubContext from '../../context/GithubContext';
+import { useState } from 'react';
+
 import { getUser } from '../../context/GithubActions';
 import { ReactComponent as SearchIcon } from '../assets/icon-search.svg';
 
-function UserSearch() {
-  const { dispatch } = useContext(GithubContext);
+function UserSearch({ dispatch }) {
   const [text, setText] = useState('');
 
   const handleChange = (e) => {
