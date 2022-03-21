@@ -1,5 +1,5 @@
-import { ReactComponent as DarkIcon } from '../assets/icon-moon.svg';
-import { ReactComponent as LightIcon } from '../assets/icon-sun.svg';
+import darkIcon from '../assets/icon-moon.svg';
+import lightIcon from '../assets/icon-sun.svg';
 
 function Header({ theme, dispatch }) {
   const switchTheme = () => {
@@ -15,7 +15,11 @@ function Header({ theme, dispatch }) {
       <div className='mode__changer'>
         <button className='theme__switcher' onClick={switchTheme}>
           <span>{theme === 'light' ? 'Dark' : 'Light'}</span>
-          {theme === 'light' ? <DarkIcon /> : <LightIcon />}
+          {theme === 'light' ? (
+            <img src={darkIcon} alt='' />
+          ) : (
+            <img src={lightIcon} alt='' />
+          )}
         </button>
       </div>
     </header>
