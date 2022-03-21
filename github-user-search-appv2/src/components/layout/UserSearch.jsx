@@ -36,7 +36,12 @@ function UserSearch({ dispatch }) {
         value={text}
         onChange={handleChange}
       />
-      <button className='search__btn'>Search</button>
+      <button
+        disabled={text ? false : true}
+        className={`search__btn ${!text ? 'search__btn--disabled' : ''}`}
+      >
+        Search
+      </button>
     </form>
   );
 }

@@ -11,6 +11,7 @@
   --theme-active: #222731;
   --blue: #0079ff;
   --blue-active: #60abff;
+  --btn-disabled: #595a5b;
   --shadow: 0 0.75rem 1rem 0 rgba(121, 110, 242, 0.2);
 }
 
@@ -21,6 +22,7 @@
   --text-secondary: #ffffff;
   --util: #ffffff;
   --theme-active: #90a4d4;
+  --btn-disabled: #153457;
   --shadow: none;
 }
 
@@ -159,6 +161,13 @@ header {
 .search__btn:focus {
   background-color: var(--blue-active);
   transition: 0.5s;
+}
+
+.search__btn--disabled[disabled],
+.search__btn--disabled[disabled]:hover,
+.search__btn--disabled[disabled]:focus {
+  background-color: var(--btn-disabled);
+  cursor: not-allowed;
 }
 
 @media (min-width: 48rem) {
