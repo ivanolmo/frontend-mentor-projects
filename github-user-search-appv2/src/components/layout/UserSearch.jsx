@@ -5,37 +5,43 @@ import searchIcon from '../assets/icon-search.svg';
 
 function UserSearch({ dispatch }) {
   const [text, setText] = useState('');
+  const [error, setError] = useState(false);
 
   const handleChange = (e) => {
+    if (error) {
+      setError(false);
+    }
     setText(e.target.value);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (text === '') {
-      // TODO improve this alert, needs to change input text to show error
-      alert('Empty search string');
-    } else {
+    try {
       dispatch({ type: 'SET_LOADING' });
       const user = await getUser(text);
       dispatch({ type: 'GET_USER', payload: user });
       setText('');
+    } catch (error) {
+      setError(true);
+      dispatch({ type: 'END_LOADING' });
     }
   };
 
   return (
     <form className='user__search' onSubmit={handleSubmit}>
       <label htmlFor='input'>
-        {/* TODO fix icon size on small screens */}
         <img src={searchIcon} alt='search' className='search__icon' />
       </label>
-      <input
-        type='text'
-        id='input'
-        placeholder='Search GitHub username&#8230;'
-        value={text}
-        onChange={handleChange}
-      />
+      <div className='input__container'>
+        <input
+          type='text'
+          id='input'
+          placeholder='Search GitHub username&#8230;'
+          value={text}
+          onChange={handleChange}
+        />
+      </div>
+      {error ? <span className='search__error'>No results</span> : ''}
       <button
         disabled={text ? false : true}
         className={`search__btn ${!text ? 'search__btn--disabled' : ''}`}
