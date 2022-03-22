@@ -10,10 +10,10 @@ function UserData({ location, blog, twitter_username, company }) {
       <UserDataLine data={location}>
         <LocationIcon />
       </UserDataLine>
-      <UserDataLine data={blog}>
+      <UserDataLine link data={blog}>
         <WebsiteIcon />
       </UserDataLine>
-      <UserDataLine data={twitter_username}>
+      <UserDataLine link data={twitter_username}>
         <TwitterIcon />
       </UserDataLine>
       <UserDataLine data={company}>

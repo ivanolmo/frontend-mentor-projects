@@ -1,8 +1,18 @@
-function UserDataLine({ data, children }) {
+function UserDataLine({ data, children, link }) {
   return (
     <div className={`data__line ${!data ? 'data__line--inactive' : ''}`}>
       {children}
-      {<span className='line__link'>{data ? data : 'Not Available'}</span>}
+      {data ? (
+        link ? (
+          <a href={data} className='line__link'>
+            {data}
+          </a>
+        ) : (
+          <span className='line__link'>{data}</span>
+        )
+      ) : (
+        <span>Not Available</span>
+      )}
     </div>
   );
 }
