@@ -33,10 +33,12 @@ Users should be able to:
 
 ![](./screenshot.png)
 
+https://user-images.githubusercontent.com/48425752/159422800-dcdcd065-d96d-4413-a93c-7f1897c4ddeb.mp4
+
 ### Links
 
-- Solution URL: [View my solution on Frontend Mentor](https://your-solution-url.com)
-- Live Site URL: [View this app on Netlify](https://your-live-site-url.com)
+- Solution URL: [View my solution on Frontend Mentor](https://www.frontendmentor.io/solutions/github-user-search-app-using-react-a_r1AKY55)
+- Live Site URL: [View this app on Netlify](https://chipper-snickerdoodle-13334b.netlify.app/)
 
 ## My process
 
