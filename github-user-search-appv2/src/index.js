@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 
 import App from './App';
 import { GithubProvider } from './context/GithubContext';
-import './reset.css';
-import './index.css';
+import './styles/reset.css';
+import './styles/index.css';
 
 ReactDOM.render(
   <React.StrictMode>

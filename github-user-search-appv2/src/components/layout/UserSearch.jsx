@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { getUser } from '../../context/GithubActions';
-import searchIcon from '../assets/icon-search.svg';
+import searchIcon from '../../assets/icon-search.svg';
 
 function UserSearch({ dispatch }) {
   const [text, setText] = useState('');

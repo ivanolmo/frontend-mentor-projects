@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 
 import { getUser } from '../../context/GithubActions';
-import UserHeading from './user/UserHeading';
-import UserBio from './user/UserBio';
-import UserStats from './user/UserStats';
-import UserData from './user/UserData';
+import UserHeading from '../user/UserHeading';
+import UserBio from '../user/UserBio';
+import UserStats from '../user/UserStats';
+import UserData from '../user/UserData';
 import Spinner from './Spinner';
 
 function Card({ isLoading, dispatch, user }) {

@@ -1,5 +1,5 @@
-import { ReactComponent as DarkIcon } from '../assets/icon-moon.svg';
-import { ReactComponent as LightIcon } from '../assets/icon-sun.svg';
+import { ReactComponent as DarkIcon } from '../../assets/icon-moon.svg';
+import { ReactComponent as LightIcon } from '../../assets/icon-sun.svg';
 
 function Header({ theme, dispatch }) {
   const toggleTheme = () => {
