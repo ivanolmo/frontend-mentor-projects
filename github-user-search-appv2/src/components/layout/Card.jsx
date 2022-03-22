@@ -15,7 +15,7 @@ function Card({ isLoading, dispatch, user }) {
       dispatch({ type: 'GET_USER', payload: firstUser });
     }
     getFirstUser();
-  }, []);
+  }, [dispatch]);
 
   const {
     avatar_url,
