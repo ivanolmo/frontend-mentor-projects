@@ -316,6 +316,10 @@ body {
   }
 }
 
+.mobile-nav-toggle {
+  display: none;
+}
+
 @media (max-width: 35em) {
   .primary-navigation {
     flex-direction: column;
@@ -325,7 +329,30 @@ body {
     position: fixed;
     inset: 0 0 0 7.5rem;
     list-style: none;
+    transition: all 0.3s ease-in;
+    transform: translateX(100%);
   }
+
+  .primary-navigation[data-visible='true'] {
+    transform: translateX(0);
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+    position: absolute;
+    top: 2rem;
+    right: 1.5rem;
+    z-index: 1000;
+    background: none;
+    border: none;
+    background-image: url('./assets/shared/icon-hamburger.svg');
+    background-repeat: no-repeat;
+    width: 1.5rem;
+    aspect-ratio: 1;
+    cursor: pointer;
+  }
+
+  /* .mobile-nav-toggle[] */
 }
 
 .primary-navigation a {
