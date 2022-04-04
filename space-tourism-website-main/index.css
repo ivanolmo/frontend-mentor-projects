@@ -125,7 +125,7 @@ body {
   padding-inline: 1.5rem;
 }
 
-@media (min-width: 50em) {
+@media (min-width: 55em) {
   .grid-container {
     column-gap: var(--container-gap, 2rem);
     grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(
@@ -311,11 +311,16 @@ body {
   align-items: center;
 }
 
+@media (min-width: 55em) {
+  .header-nav {
+    margin-top: 2.5rem;
+  }
+}
+
 .primary-navigation {
-  outline: 1px solid red;
   --underline-gap: 2.5rem;
   list-style: none;
-  z-index: 999;
+  z-index: 1;
   background: hsl(var(--clr-dark) / 0.95);
 }
 
@@ -342,6 +347,10 @@ body {
 
 /* mobile size only */
 @media (max-width: 35em) {
+  .logo {
+    margin-top: 1.5rem;
+  }
+
   .primary-navigation {
     flex-direction: column;
     --gap: 2rem;
@@ -363,7 +372,7 @@ body {
     position: absolute;
     top: 2rem;
     right: 1.5rem;
-    z-index: 1000;
+    z-index: 10;
     background: none;
     border: none;
     background-image: url('./assets/shared/icon-hamburger.svg');
@@ -395,7 +404,7 @@ body {
   }
 }
 
-@media (min-width: 35em) and (max-width: 50em) {
+@media (min-width: 35em) and (max-width: 55em) {
   .primary-navigation {
     --gap: 2.5rem;
     padding-inline: 3rem;
@@ -410,6 +419,41 @@ body {
   .underline-indicators > li > a {
     font-size: 0.875rem;
     letter-spacing: 2.3px;
+  }
+}
+
+@media (min-width: 55em) {
+  .primary-navigation {
+    --gap: clamp(2rem, 20vw, 3rem);
+    padding-left: clamp(3.5rem, 8vw, 7.5rem);
+    padding-right: clamp(6rem, 8vw, 10.5rem);
+  }
+}
+
+/* query specifically for horizontal line next to nav on large screens */
+@media (min-width: 65em) {
+  .logo {
+    flex-shrink: 0;
+  }
+
+  .header-nav {
+    --gap: 0;
+  }
+
+  .header-nav::before {
+    content: '';
+    display: block;
+    position: relative;
+    height: 1px;
+    flex-grow: 1;
+    order: 1;
+    margin-inline: 4rem -2rem;
+    z-index: 5;
+    background-color: hsl(var(--clr-white) / 0.3);
+  }
+
+  nav {
+    order: 2;
   }
 }
 
@@ -483,7 +527,7 @@ body {
   }
 }
 
-@media (min-width: 50rem) {
+@media (min-width: 55rem) {
   .home {
     background-image: url('./assets/background/background-home-desktop.jpg');
   }
