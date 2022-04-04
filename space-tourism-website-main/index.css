@@ -125,7 +125,7 @@ body {
   padding-inline: 1.5rem;
 }
 
-@media (min-width: 45em) {
+@media (min-width: 50em) {
   .grid-container {
     column-gap: var(--container-gap, 2rem);
     grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(
@@ -302,13 +302,33 @@ body {
 
 /* Nav tabs / sliders */
 
+.logo {
+  margin-left: clamp(1.5rem, 4vw, 3.4375rem);
+}
+
+.header-nav {
+  justify-content: space-between;
+  align-items: center;
+}
+
 .primary-navigation {
-  --underline-gap: 2rem;
+  outline: 1px solid red;
+  --underline-gap: 2.5rem;
   list-style: none;
   z-index: 999;
   background: hsl(var(--clr-dark) / 0.95);
 }
 
+.primary-navigation a {
+  text-decoration: none;
+}
+
+.primary-navigation span {
+  font-weight: 700;
+  margin-right: 0.7em;
+}
+
+/* add backdrop filter if supported by browser, otherwise use fallback in class above */
 @supports (backdrop-filter: blur(40px)) {
   .primary-navigation {
     background-color: hsl(var(--clr-white) / 0.01);
@@ -320,6 +340,7 @@ body {
   display: none;
 }
 
+/* mobile size only */
 @media (max-width: 35em) {
   .primary-navigation {
     flex-direction: column;
@@ -329,7 +350,7 @@ body {
     position: fixed;
     inset: 0 0 0 7.5rem;
     list-style: none;
-    transition: all 0.3s ease-in;
+    transition: transform 0.3s ease-in;
     transform: translateX(100%);
   }
 
@@ -351,17 +372,6 @@ body {
     aspect-ratio: 1;
     cursor: pointer;
   }
-
-  /* .mobile-nav-toggle[] */
-}
-
-.primary-navigation a {
-  text-decoration: none;
-}
-
-.primary-navigation span {
-  font-weight: 700;
-  margin-right: 0.7em;
 }
 
 .underline-indicators > * {
@@ -375,7 +385,6 @@ body {
 
 @media (min-width: 35em) {
   .underline-indicators > * {
-    /* --underline-gap: ?; */
     border: 0;
     border-bottom: 0.2rem solid hsl(var(--clr-white) / 0);
   }
@@ -383,6 +392,24 @@ body {
   .underline-indicators > *:hover {
     color: hsl(var(--clr-white));
     border-color: hsl(var(--clr-white) / 0.5);
+  }
+}
+
+@media (min-width: 35em) and (max-width: 50em) {
+  .primary-navigation {
+    --gap: 2.5rem;
+    padding-inline: 3rem;
+    justify-content: space-between;
+  }
+
+  .primary-navigation span {
+    display: none;
+  }
+
+  /* extra specificity to override class variable */
+  .underline-indicators > li > a {
+    font-size: 0.875rem;
+    letter-spacing: 2.3px;
   }
 }
 
@@ -456,7 +483,7 @@ body {
   }
 }
 
-@media (min-width: 45rem) {
+@media (min-width: 50rem) {
   .home {
     background-image: url('./assets/background/background-home-desktop.jpg');
   }
