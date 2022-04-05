@@ -165,7 +165,7 @@ body {
 }
 
 @media (min-width: 55em) {
-  .grid-container {
+  .grid-container--home {
     column-gap: var(--container-gap, 2rem);
     grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(
         2rem,
@@ -174,11 +174,11 @@ body {
     text-align: left;
   }
 
-  .grid-container > *:first-child {
+  .grid-container--home > *:first-child {
     grid-column: 2;
   }
 
-  .grid-container > *:last-child {
+  .grid-container--home > *:last-child {
     grid-column: 3;
   }
 
@@ -371,7 +371,7 @@ body {
 /*    Navigation      */
 
 .logo {
-  margin-left: clamp(1.5rem, 4vw, 3.4375rem);
+  margin-left: clamp(1.5rem, 5vw, 3.4375rem);
 }
 
 .header-nav {
@@ -584,8 +584,11 @@ body {
   background-color: hsl(var(--clr-white));
   color: hsl(var(--clr-dark));
 }
-
+/* ------------------ */
 /*       Layout       */
+/* ------------------ */
+
+/* Destination page   */
 
 .grid-container--destination {
   /* row-gap: 0; */
@@ -614,4 +617,78 @@ body {
   margin-top: 2rem;
   padding-block: 2rem 3.75rem;
   border-top: 1px solid hsl(var(--clr-white) / 0.2);
+}
+
+@media (min-width: 35em) {
+  .destination .numbered-title {
+    justify-self: start;
+    margin-top: 2.5rem;
+    margin-left: 1rem;
+  }
+
+  .destination-image {
+    margin-top: 3.75rem;
+    padding-inline: 13.125rem;
+  }
+
+  .destination .tab-list {
+    margin-top: 3.25rem;
+  }
+
+  .destination-info {
+    margin-top: 2rem;
+    padding-inline: 4.5rem;
+  }
+
+  .destination-info > p {
+    margin-top: 0.5rem;
+  }
+
+  .destination-details {
+    flex-direction: row;
+    justify-content: center;
+    --gap: 5rem;
+    margin-top: 3.125rem;
+    padding-block: 1.75rem 3.875rem;
+  }
+}
+
+@media (min-width: 55rem) {
+  .grid-container--destination {
+    text-align: left;
+    grid-template-columns: 10rem 1fr 10rem 28rem 10rem;
+    grid-template-rows: min-content 4rem auto;
+    grid-template-areas:
+      '. numbered . . .'
+      '. . . . .'
+      '. image . content .';
+  }
+
+  .destination .numbered-title {
+    grid-area: numbered;
+    margin-left: -2rem;
+    letter-spacing: 4.72px;
+  }
+
+  .destination-image {
+    grid-area: image;
+    padding-inline: 0;
+    /* max-width: 445px; */
+  }
+
+  .destination .tab-list,
+  .destination-info {
+    grid-area: content;
+    justify-self: start;
+    margin-top: 0;
+    padding: 0;
+  }
+
+  .destination-info {
+    margin-top: 2rem;
+  }
+
+  .destination .tab-list {
+    align-self: start;
+  }
 }
