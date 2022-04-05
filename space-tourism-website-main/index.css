@@ -7,7 +7,7 @@
   --clr-light: 231 77% 90%;
   --clr-white: 0 0% 100%;
 
-  --fs-900: clamp(5rem, 9vw + 1rem, 9.375rem);
+  --fs-900: clamp(5rem, 12vw + 1rem, 9.375rem);
   --fs-800: 3.5rem;
   --fs-700: 1.5rem;
   --fs-600: 1rem;
@@ -15,6 +15,8 @@
   --fs-400: 0.9375rem;
   --fs-300: 1rem;
   --fs-200: 0.875rem;
+
+  --lh-400: 1.67;
 
   --ff-serif: 'Bellefair', serif;
   --ff-sans-cond: 'Barlow Condensed', sans-serif;
@@ -28,16 +30,20 @@
     --fs-600: 1.5rem;
     --fs-500: 1.25rem;
     --fs-400: 1rem;
+
+    --lh-400: 1.75;
   }
 }
 
-@media (min-width: 45em) {
+@media (min-width: 55em) {
   :root {
     --fs-800: 6.25rem;
     --fs-700: 3.5rem;
     --fs-600: 2rem;
     --fs-500: 1.75rem;
     --fs-400: 1.125rem;
+
+    --lh-400: 1.78;
   }
 }
 
@@ -87,6 +93,44 @@ body {
   min-height: 100vh;
 }
 
+/* --------------------- */
+/* Background image      */
+/* --------------------- */
+
+body {
+  background-size: cover;
+  background-position: bottom center;
+}
+
+.home {
+  background-image: url('./assets/background/background-home-mobile.jpg');
+}
+
+.destination {
+  background-image: url('./assets/destination/background-destination-mobile.jpg');
+}
+
+@media (min-width: 35rem) {
+  .home {
+    background-image: url('./assets/background/background-home-tablet.jpg');
+    background-position: center center;
+  }
+
+  .destination {
+    background-image: url('./assets/destination/background-destination-tablet.jpg');
+  }
+}
+
+@media (min-width: 55rem) {
+  .home {
+    background-image: url('./assets/background/background-home-desktop.jpg');
+  }
+
+  .destination {
+    background-image: url('./assets/destination/background-destination-desktop.jpg');
+  }
+}
+
 /* ------------------ */
 /* Utility classes    */
 /* ------------------ */
@@ -106,11 +150,6 @@ body {
 .d-block {
   display: block;
 }
-
-/* .flow > *:where(:not(:first-child)) {
-  margin-top: var(--flow-space, 1rem);
-  outline: 1px solid red;
-} */
 
 .container {
   padding-inline: 2em;
@@ -149,7 +188,7 @@ body {
   }
 }
 
-/* Screen reader only class */
+/* A11y classes */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -273,11 +312,19 @@ body {
   line-height: 1.1;
 }
 
+.lh-400 {
+  line-height: var(--lh-400);
+}
+
 .numbered-title {
+  font-family: var(--ff-sans-cond);
+  font-size: var(--fs-500);
+  text-transform: uppercase;
 }
 
 .numbered-title span {
-  color: hsl(var(--text-white) / 0.25);
+  color: hsl(var(--clr-white) / 0.3);
+  margin-right: 1rem;
 }
 
 /* -------------------*/
@@ -345,15 +392,20 @@ body {
   text-decoration: none;
 }
 
-.primary-navigation span {
+.primary-navigation span,
+.page-header span {
   font-weight: 700;
   margin-right: 0.7em;
+}
+
+.page-header span {
+  color: hsl(var(--clr-white) / 0.3);
 }
 
 /* add backdrop filter if supported by browser, otherwise use fallback in class above */
 @supports (backdrop-filter: blur(40px)) {
   .primary-navigation {
-    background-color: hsl(var(--clr-white) / 0.01);
+    background-color: hsl(var(--clr-white) / 0.05);
     backdrop-filter: blur(40px);
   }
 }
@@ -374,6 +426,7 @@ body {
     --underline-gap: 0.1em;
     padding: 7.375rem 0 0 2rem;
     position: fixed;
+    z-index: 999;
     inset: 0 0 0 7.5rem;
     list-style: none;
     transition: transform 0.3s ease-in;
@@ -389,7 +442,7 @@ body {
     position: absolute;
     top: 2rem;
     right: 1.5rem;
-    z-index: 10;
+    z-index: 1000;
     background: none;
     border: none;
     background-image: url('./assets/shared/icon-hamburger.svg');
@@ -405,7 +458,7 @@ body {
   font-size: 1rem;
   line-height: 1;
   border: 0;
-  border-right: 0.25em solid hsl(var(--clr-white) / 0);
+  border-bottom: 0.25em solid hsl(var(--clr-white) / 0);
   cursor: pointer;
 }
 
@@ -417,7 +470,6 @@ body {
 
   .underline-indicators > *:hover,
   .underline-indicators > *:focus {
-    color: hsl(var(--clr-white));
     border-color: hsl(var(--clr-white) / 0.5);
   }
 }
@@ -509,7 +561,7 @@ body {
 }
 
 .number-indicators > * {
-  width: 5rem; /* check this */
+  width: 5rem; /* TODO check this */
   aspect-ratio: 1;
   border: 1px solid hsl(var(--clr-white) / 0.3);
   border-radius: 50%;
@@ -527,28 +579,21 @@ body {
   color: hsl(var(--clr-dark));
 }
 
-/* --------------------- */
-/* Background image      */
-/* --------------------- */
-
-body {
-  background-size: cover;
-  background-position: bottom center;
-}
-
-.home {
-  background-image: url('./assets/background/background-home-mobile.jpg');
+/* .main-content span,
+.main-content p {
+  margin-top: 1rem;
 }
 
 @media (min-width: 35rem) {
-  .home {
-    background-image: url('./assets/background/background-home-tablet.jpg');
-    background-position: center center;
+  .main-content span,
+  .main-content p {
+    margin-top: 1.5rem;
   }
-}
+} */
 
-@media (min-width: 55rem) {
-  .home {
-    background-image: url('./assets/background/background-home-desktop.jpg');
-  }
+.grid-container--destination {
+  /* row-gap: 0; */
+}
+.dest-image {
+  padding-inline: 4.9375rem;
 }
