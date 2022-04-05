@@ -135,7 +135,7 @@ body {
 /* Utility classes    */
 /* ------------------ */
 
-/* General classes    */
+/*   Layout           */
 
 .flex {
   display: flex;
@@ -229,6 +229,10 @@ body {
 
 .bg-white {
   background-color: hsl(var(--clr-white));
+}
+
+.bg-none {
+  background-color: transparent;
 }
 
 .text-dark {
@@ -364,7 +368,7 @@ body {
   transform: scale(1.5);
 }
 
-/* Nav tabs / sliders */
+/*    Navigation      */
 
 .logo {
   margin-left: clamp(1.5rem, 4vw, 3.4375rem);
@@ -533,6 +537,8 @@ body {
   border-color: hsl(var(--clr-white));
 }
 
+/* Tab/Dot/Number nav */
+
 .tab-list,
 .dot-indicators {
   --gap: 2rem;
@@ -579,21 +585,33 @@ body {
   color: hsl(var(--clr-dark));
 }
 
-/* .main-content span,
-.main-content p {
-  margin-top: 1rem;
-}
-
-@media (min-width: 35rem) {
-  .main-content span,
-  .main-content p {
-    margin-top: 1.5rem;
-  }
-} */
+/*       Layout       */
 
 .grid-container--destination {
   /* row-gap: 0; */
 }
-.dest-image {
+
+.destination .numbered-title {
+  margin-top: 1.5rem;
+}
+
+.destination-image {
+  margin-top: 2rem;
   padding-inline: 4.9375rem;
+}
+
+.destination .tab-list {
+  margin-top: 1.625rem;
+}
+
+.destination-info {
+  margin-top: 1.25rem;
+}
+
+.destination-details {
+  flex-direction: column;
+  --gap: 2rem;
+  margin-top: 2rem;
+  padding-block: 2rem 3.75rem;
+  border-top: 1px solid hsl(var(--clr-white) / 0.2);
 }
