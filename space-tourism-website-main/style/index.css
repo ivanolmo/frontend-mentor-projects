@@ -102,6 +102,7 @@ body {
 body {
   background-size: cover;
   background-position: bottom center;
+  background-attachment: fixed;
 }
 
 .home {
@@ -123,7 +124,6 @@ body {
 @media (min-width: 35rem) {
   .home {
     background-image: url('../assets/background/background-home-tablet.jpg');
-    background-position: center center;
   }
 
   .destination {
