@@ -30,6 +30,7 @@
     --fs-600: 1.5rem;
     --fs-500: 1.25rem;
     --fs-400: 1rem;
+    --fs-200: 1rem;
 
     --lh-400: 1.75;
   }
@@ -112,8 +113,10 @@ body {
 
 .crew {
   background-image: url('./assets/crew/background-crew-mobile.jpg');
-  background-size: cover;
-  background-position: bottom center;
+}
+
+.technology {
+  background-image: url('./assets/technology/background-technology-mobile.jpg');
 }
 
 @media (min-width: 35rem) {
@@ -129,6 +132,10 @@ body {
   .crew {
     background-image: url('./assets/crew/background-crew-tablet.jpg');
   }
+
+  .technology {
+    background-image: url('./assets/technology/background-technology-tablet.jpg');
+  }
 }
 
 @media (min-width: 55rem) {
@@ -142,6 +149,10 @@ body {
 
   .crew {
     background-image: url('./assets/crew/background-crew-desktop.jpg');
+  }
+
+  .technology {
+    background-image: url('./assets/technology/background-technology-desktop.jpg');
   }
 }
 
@@ -193,7 +204,7 @@ body {
 
 .skip-to-content {
   position: absolute;
-  left: 48%;
+  /* left: 48%; TODO maybe check this on smaller screens */
   background: hsl(var(--clr-white));
   color: hsl(var(--clr-dark));
   transform: translateY(-100%);
@@ -559,16 +570,15 @@ body {
 }
 
 .number-indicators {
-  --gap: 2rem;
+  --gap: 1rem;
 }
 
 .number-indicators > * {
-  width: 5rem; /* TODO check this */
   aspect-ratio: 1;
   border: 1px solid hsl(var(--clr-white) / 0.3);
   border-radius: 50%;
   cursor: pointer;
-  /* padding: 1rem; */
+  padding-inline: 1rem;
 }
 
 .number-indicators > *:hover,
@@ -712,7 +722,7 @@ body {
 /*     Crew page      */
 
 .crew {
-  /* place-items: start; */
+  /* place-items: start; TODO check nav on tablet/desktop sizes */
 }
 
 .crew-image {
@@ -819,4 +829,36 @@ body {
     margin-top: 0.75rem;
     max-width: 87%;
   }
+}
+
+/* Technology page    */
+.technology .grid-container {
+  padding: 0;
+}
+
+/* force rows for image sizing purposes */
+.grid-container--technology {
+  grid-template-rows: min-content 10.625rem min-content min-content;
+  row-gap: 2rem;
+}
+
+.technology-image {
+  height: 100%;
+}
+
+.technology-image > img {
+  height: 100%;
+}
+
+.technology .number-indicators {
+}
+
+.technology-info {
+  flex-direction: column;
+  --gap: 0.5rem;
+}
+
+.technology-bio {
+  margin-top: 0.5rem;
+  padding: 0 1.5rem 5rem;
 }
