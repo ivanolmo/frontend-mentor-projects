@@ -7,7 +7,7 @@
   --clr-light: 231 77% 90%;
   --clr-white: 0 0% 100%;
 
-  --fs-900: clamp(5rem, 12vw + 1rem, 9.375rem);
+  --fs-900: 5rem;
   --fs-800: 3.5rem;
   --fs-700: 1.5rem;
   --fs-600: 1rem;
@@ -25,6 +25,7 @@
 
 @media (min-width: 35em) {
   :root {
+    --fs-900: 9.375rem;
     --fs-800: 5rem;
     --fs-700: 2.5rem;
     --fs-600: 1.5rem;
@@ -372,6 +373,23 @@ body {
   transform: scale(1.5);
 }
 
+@media (min-width: 35em) {
+  .large-button {
+    font-size: 2rem;
+    padding: 0 1.5em;
+  }
+}
+
+@media (min-width: 55em) {
+  .large-button {
+    padding: 0 2em;
+  }
+
+  .explore {
+    place-self: end;
+  }
+}
+
 /* ------------------ */
 /*    Navigation      */
 /* ------------------ */
@@ -614,27 +632,39 @@ body {
 
 /* Home page          */
 
+.main-content > h1 {
+  letter-spacing: 3.4px;
+}
+
+@media (min-width: 35em) {
+  .main-content > p {
+    padding-inline: 8.75rem;
+  }
+}
+
 @media (min-width: 55em) {
   .grid-container--home {
-    column-gap: var(--container-gap, 2rem);
-    grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(
-        2rem,
-        1fr
-      );
+    grid-template-columns: 8.5rem repeat(2, 1fr) 8.5rem;
+    align-items: end;
     text-align: left;
+    padding-bottom: 8.1875rem;
   }
 
-  .grid-container--home > *:first-child {
+  .main-content {
     grid-column: 2;
   }
 
-  .grid-container--home > *:last-child {
-    grid-column: 3;
+  .main-content > h1 {
+    letter-spacing: 4.7px;
   }
 
-  .grid-container--home {
-    padding-bottom: 8.1875rem;
-    align-items: end;
+  .main-content > p {
+    padding: 0;
+    max-width: 80%;
+  }
+
+  .explore {
+    grid-column: 3;
   }
 }
 
