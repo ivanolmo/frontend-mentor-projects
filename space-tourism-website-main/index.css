@@ -204,7 +204,7 @@ body {
 
 .skip-to-content {
   position: absolute;
-  /* left: 48%; TODO maybe check this on smaller screens */
+  left: 25%;
   background: hsl(var(--clr-white));
   color: hsl(var(--clr-dark));
   transform: translateY(-100%);
