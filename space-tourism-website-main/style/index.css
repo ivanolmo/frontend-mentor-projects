@@ -160,7 +160,7 @@ body {
 /* Utility classes    */
 /* ------------------ */
 
-/*   Layout           */
+/* Reusable layout classes */
 
 .flex {
   display: flex;
@@ -321,6 +321,8 @@ body {
   line-height: var(--lh-400);
 }
 
+/* Utility classes */
+
 .numbered-title {
   font-family: var(--ff-sans-cond);
   font-size: var(--fs-500);
@@ -370,7 +372,9 @@ body {
   transform: scale(1.5);
 }
 
+/* ------------------ */
 /*    Navigation      */
+/* ------------------ */
 
 .logo {
   margin-left: clamp(1.5rem, 5vw, 3.4375rem);
@@ -420,7 +424,7 @@ body {
   display: none;
 }
 
-/* mobile size only */
+/* query for mobile size only */
 @media (max-width: 35em) {
   .logo {
     margin-top: 1.5rem;
@@ -539,7 +543,20 @@ body {
   border-color: hsl(var(--clr-white));
 }
 
+/* fix for mobile nav active border */
+@media (max-width: 35em) {
+  .underline-indicators > .active,
+  .underline-indicators > [aria-selected='true'] {
+    color: hsl(var(--clr-white));
+    border: 0;
+    border-right: 0.2rem solid hsl(var(--clr-white) / 0);
+    border-color: hsl(var(--clr-white));
+  }
+}
+
+/* ------------------ */
 /* Tab/Dot/Number nav */
+/* ------------------ */
 
 .tab-list {
   --gap: 2rem;
