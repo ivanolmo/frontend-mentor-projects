@@ -536,11 +536,17 @@ body {
 
 .dot-indicators > * {
   background-color: hsl(var(--clr-white) / 0.3);
-  padding: 0.5em;
+  padding: 0.32em;
   aspect-ratio: 1;
   border: 0;
   border-radius: 50%;
   cursor: pointer;
+}
+
+@media (min-width: 55em) {
+  .dot-indicators > * {
+    padding: 0.5rem;
+  }
 }
 
 .dot-indicators > *:hover,
@@ -574,6 +580,7 @@ body {
   background-color: hsl(var(--clr-white));
   color: hsl(var(--clr-dark));
 }
+
 /* ------------------ */
 /*       Layout       */
 /* ------------------ */
@@ -632,6 +639,7 @@ body {
     justify-self: start;
     margin-top: 2.5rem;
     margin-left: 1rem;
+    letter-spacing: 3.4px;
   }
 
   .destination-image {
@@ -730,4 +738,85 @@ body {
 
 .crew-bio {
   margin-top: 0.5rem;
+}
+
+@media (min-width: 35em) {
+  .grid-container--crew {
+    grid-template-areas:
+      'title'
+      'content'
+      'dots'
+      'image';
+  }
+
+  .crew .numbered-title {
+    grid-area: title;
+    justify-self: start;
+    margin-top: 2.5rem;
+    margin-left: 1rem;
+    letter-spacing: 3.4px;
+  }
+
+  .crew-image {
+    grid-area: image;
+    margin-top: 2.5rem;
+    padding-inline: 10.5rem;
+    border: 0;
+  }
+
+  .crew .dot-indicators {
+    grid-area: dots;
+  }
+
+  .crew-info {
+    grid-area: content;
+    max-width: 62%;
+    margin-top: 3.75rem;
+    padding: 0;
+  }
+}
+
+@media (min-width: 55em) {
+  .grid-container--crew {
+    grid-template-columns: 8.5rem 31rem 5rem 1fr 8.5rem;
+    grid-template-rows: min-content 10rem 1fr 7.5rem min-content;
+    grid-template-areas:
+      '.. numbered .. image ..'
+      '... ... ... image ...'
+      '.. content .. image ..'
+      '... dots ... image ...'
+      '... ... ... image ...';
+  }
+
+  .crew .numbered-title {
+    grid-area: numbered;
+    letter-spacing: 4.7px;
+  }
+
+  .crew-image {
+    grid-area: image;
+    place-self: end;
+    padding: 0;
+    margin: 0;
+  }
+
+  .crew .dot-indicators {
+    grid-area: dots;
+    place-self: start;
+    margin: 0;
+  }
+
+  .crew-info {
+    grid-area: content;
+    --gap: 1rem;
+    align-self: start;
+    margin: 0;
+    text-align: left;
+    max-width: 100%;
+  }
+
+  .crew-bio {
+    margin-top: 0.75rem;
+    max-width: 87%;
+  }
 }
