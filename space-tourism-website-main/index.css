@@ -721,10 +721,6 @@ body {
 
 /*     Crew page      */
 
-.crew {
-  /* place-items: start; TODO check nav on tablet/desktop sizes */
-}
-
 .crew-image {
   margin-top: 2rem;
   padding-inline: 5rem;
@@ -752,6 +748,7 @@ body {
 
 @media (min-width: 35em) {
   .grid-container--crew {
+    grid-template-rows: min-content 16rem min-content 1fr;
     grid-template-areas:
       'title'
       'content'
@@ -769,6 +766,7 @@ body {
 
   .crew-image {
     grid-area: image;
+    align-self: end;
     margin-top: 2.5rem;
     padding-inline: 10.5rem;
     border: 0;
@@ -831,7 +829,8 @@ body {
   }
 }
 
-/* Technology page    */
+/*   Technology page  */
+
 .technology .grid-container {
   padding: 0;
 }
@@ -842,23 +841,118 @@ body {
   row-gap: 2rem;
 }
 
-.technology-image {
+.grid-container--technology img {
+  width: 100%;
   height: 100%;
 }
 
-.technology-image > img {
-  height: 100%;
-}
-
-.technology .number-indicators {
+.technology-image-port {
+  display: none;
 }
 
 .technology-info {
   flex-direction: column;
   --gap: 0.5rem;
+  padding-bottom: 5rem;
 }
 
 .technology-bio {
   margin-top: 0.5rem;
-  padding: 0 1.5rem 5rem;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 35em) {
+  .grid-container--technology {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .technology .numbered-title {
+    align-self: start;
+    margin-top: 2.5rem;
+    margin-left: 2.5rem;
+  }
+
+  .technology-image-land {
+    margin-top: 1.75rem;
+    max-height: 19.375rem;
+  }
+
+  .number-indicators {
+    margin-top: 1.5rem;
+  }
+
+  .number-indicators > * {
+    padding-inline: 1.6rem;
+  }
+
+  .technology-info {
+    margin-top: 0.75rem;
+    --gap: 1rem;
+    max-width: 63%;
+    padding-bottom: 6.125rem;
+  }
+}
+
+@media (min-width: 55em) {
+  .grid-container--technology {
+    display: grid;
+    grid-template-columns: 10rem 10rem 30rem 8.125rem 1fr;
+    grid-template-rows: 4.75rem min-content 8.625rem 19rem min-content min-content;
+    grid-template-areas:
+      '. . . . .'
+      '. numbered numbered . .'
+      '... ... ... ... image'
+      '. num content . image'
+      '. num content . image'
+      '... ... ... ... image'
+      '. . . . .';
+    gap: 0;
+  }
+
+  .technology .numbered-title {
+    grid-area: numbered;
+    place-self: start;
+    margin: 0;
+    padding: 0;
+  }
+
+  .technology-image-land {
+    display: none;
+  }
+
+  .technology-image-port {
+    grid-area: image;
+    display: block;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+  }
+
+  .number-indicators {
+    grid-area: num;
+    place-self: start;
+    flex-direction: column;
+    --gap: 2rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .number-indicators > * {
+    padding-inline: 2rem;
+  }
+
+  .technology-info {
+    grid-area: content;
+    justify-self: start;
+    text-align: left;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .technology-bio {
+    padding: 0;
+  }
 }
